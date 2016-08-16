@@ -11474,13 +11474,16 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 					}
 				},
 				watch: {
-					'simple': function simple(val) {
-						if (val) {
-							this.jumpable = false;
-							this.pageSizeEditable = false;
-						} else {
-							this.jumpable = true;
-							this.pageSizeEditable = true;
+					'simple': {
+						immediate: true,
+						handler: function handler(val) {
+							if (val) {
+								this.jumpable = false;
+								this.pageSizeEditable = false;
+							} else {
+								this.jumpable = true;
+								this.pageSizeEditable = true;
+							}
 						}
 					},
 					'pageTo': function pageTo(val) {
@@ -12627,7 +12630,7 @@ new _vue2.default({
                 'true': true,
                 'false': false
             },
-            simple: false,
+            simple: true,
             align: 'center',
             displayNum: 6,
             edgeNum: 2,

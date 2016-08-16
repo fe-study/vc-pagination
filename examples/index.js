@@ -9,7 +9,7 @@ new Vue({
                 'true': true,
                 'false': false
             },
-            simple: false,
+            simple: true,
             align: 'center',
             displayNum: 6,
             edgeNum: 2,

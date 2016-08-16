@@ -754,13 +754,16 @@ exports.default = {
         }
     },
     watch: {
-        'simple': function simple(val) {
-            if (val) {
-                this.jumpable = false;
-                this.pageSizeEditable = false;
-            } else {
-                this.jumpable = true;
-                this.pageSizeEditable = true;
+        'simple': {
+            immediate: true,
+            handler: function handler(val) {
+                if (val) {
+                    this.jumpable = false;
+                    this.pageSizeEditable = false;
+                } else {
+                    this.jumpable = true;
+                    this.pageSizeEditable = true;
+                }
             }
         },
         'pageTo': function pageTo(val) {

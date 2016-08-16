@@ -289,13 +289,16 @@ export default {
         }
     },
     watch: {
-        'simple': function (val) {
-            if (val) {
-                this.jumpable = false
-                this.pageSizeEditable = false
-            } else {
-                this.jumpable = true
-                this.pageSizeEditable = true
+        'simple': {
+            immediate: true,
+            handler (val) {
+                if (val) {
+                    this.jumpable = false
+                    this.pageSizeEditable = false
+                } else {
+                    this.jumpable = true
+                    this.pageSizeEditable = true
+                }
             }
         },
         'pageTo': function (val) {

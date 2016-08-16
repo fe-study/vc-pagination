@@ -1,13 +1,15 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-pagination",
-  "version": "0.1.0",
-  "description": "a pagination component with bootstrap & vue.js",
+  "version": "0.1.1",
+  "description": "autocomplete component based on vue.js & bootstrap",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
+    "build:dev": " webpack --progress --hide-modules --config webpack.config.js",
+    "build:prod": "webpack --progress --hide-modules --config webpack.production.js",
+    "build": "npm run build:dev && npm run build:prod",
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
-    "build": " webpack -w --progress --hide-modules ",
-    "publish": "webpack --progress --hide-modules --config webpack.production.js"
+    "publish": "npm build && npm publish"
   },
   "main": "dist/build.js",
   "repository": {
@@ -21,7 +23,7 @@
   "dependencies": {
     "vue": "^1.0.24"
   },
-  "keywords": ["input", "pagination", "component", "vue", "bootstrap"],
+  "keywords": ["pagination", "component", "vue", "bootstrap"],
   "devDependencies": {
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
