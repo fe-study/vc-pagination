@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="./static/css/bootstrap.min.css">
+	<title>example</title>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            background: rgba(119, 129, 149, 0.8);
+        }
+    </style>
+</head>
+<body>
+	<div id="app">
+        <vc-pagination
+            :simple="simple"
+            :align="align"
+            :display-num="displayNum"
+            :edge-num="edgeNum"
+            :total="total"
+            :current.sync="current"
+            :page-size.sync="pageSize"
+            :page-size-editable="pageSizeEditable"
+            :page-size-arr="pageSizeArr"
+            :jumpable="jumpable"
+            :go-label="goLabel"
+            :invilid-page-handler="invilidPageHandler"
+            :on-page-change="onPageChange"
+            :on-page-size-change="onPageSizeChange"
+        >
+        </vc-pagination>
+
+        <div class="form-group">
+        <label>是否是简单</label>
+            <input type="radio" :value="bools.true" name="simple" v-model="simple"> 简单版
+            <input type="radio" :value="bools.false" name="simple" v-model="simple"> 完整版 
+        </div>
+
+        <div class="form-group">
+            <label>align</label>
+            <input type="radio" value="center" name="align" v-model="align">居中
+            <input type="radio" value="left" name="align" v-model="align">靠左
+            <input type="radio" value="right" name="align" v-model="align">靠右
+        </div>
+
+        <div class="form-group">
+            <label>共显示多少页</label>
+            <input type="number" class="form-control" placeholder="displayNum" v-model="displayNum" />
+        </div>
+
+        <div class="form-group">
+            <label>前后剩下多少页</label>
+            <input type="number" class="form-control" placeholder="edgeNum" v-model="edgeNum" />
+        </div>
+
+        <div class="form-group">
+            <label>总结果集数目</label>
+            <input type="number" class="form-control" placeholder="total" v-model="total" />
+        </div>
+
+        <div class="form-group">
+            <label for="" class="">当前页面</label>
+            <input type="number" class="form-control" placeholder="current" v-model="current" />
+        </div>
+
+        <div class="form-group">
+            <label>pageSize</label>
+            <input type="text" class="form-control" placeholder="pageSize" v-model="pageSize" />
+        </div>
+
+        <div class="form-group">
+            <label>是否可切换pageSize</label>
+            <input type="radio" :value="bools.true" name="pageSizeEditable" v-model="pageSizeEditable">是
+            <input type="radio" :value="bools.false" name="pageSizeEditable" v-model="pageSizeEditable">否
+        </div>
+
+        <div class="form-group">
+            <label>pageSizeArr</label>
+            <input type="text" class="form-control" placeholder="pageSizeArr" v-model="pageSizeArrStr" />
+            <button @click="setPageSizeArr" class="btn btn-info">点击重置pageSizeArr(逗号分割的数字)</button>
+        </div>
+
+        <div class="form-group">
+            <label>是否可跳转</label>
+            <input type="radio" :value="bools.true" name="jumpable" v-model="jumpable">是
+            <input type="radio" :value="bools.false" name="jumpable" v-model="jumpable">否
+        </div>
+
+        <div class="form-group">
+            <label>跳转按钮文案</label>
+            <input type="text" class="form-control" placeholder="goLabel" v-model="goLabel" />
+        </div>
+
+
+	</div>
+	<script src='../dist/example.js'></script>
+</body>
+</html>
