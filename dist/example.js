@@ -11438,10 +11438,10 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
             return this.current === this.totalPages;
           },
           showFirstPage: function showFirstPage() {
-            return this.edgeNum === 0;
+            return this.edgeNum === 0 && this.totalPages - 2 >= this.displayNum;
           },
           showLastPage: function showLastPage() {
-            return this.edgeNum === 0;
+            return this.edgeNum === 0 && this.totalPages - 2 >= this.displayNum;
           },
           pages: function pages() {
             return getPages(this.current, this.totalPages, this.edgeNum, this.displayNum);

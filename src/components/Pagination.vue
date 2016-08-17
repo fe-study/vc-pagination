@@ -252,10 +252,10 @@ export default {
             return this.current === this.totalPages
         },
         showFirstPage: function () {
-            return this.edgeNum === 0
+            return this.edgeNum === 0 && (this.totalPages - 2 >= this.displayNum)
         },
         showLastPage: function () {
-            return this.edgeNum === 0
+            return this.edgeNum === 0 && (this.totalPages - 2 >= this.displayNum)
         },
         pages: function () {
             return getPages(this.current, this.totalPages, this.edgeNum, this.displayNum)
