@@ -1,7 +1,7 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-pagination",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "bootstrap pagination component in vue.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
