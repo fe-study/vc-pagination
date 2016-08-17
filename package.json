@@ -2,7 +2,7 @@
   "author": "indexxuan@gmail.com",
   "name": "vc-pagination",
   "version": "0.1.1",
-  "description": "autocomplete component based on vue.js & bootstrap",
+  "description": "bootstrap pagination component in vue.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
     "build:dev": " webpack --progress --hide-modules --config webpack.config.js",

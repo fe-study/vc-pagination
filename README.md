@@ -1,6 +1,9 @@
-## vue component - vc-pagination
+<h1 align="center">@Vue Component - vc-pagination</h1>
 
-## usage
+## Install
+`npm install vc-pagination --save`
+
+## Dev
 
 * Build
 
@@ -8,7 +11,22 @@
 npm run build
 
 ```
-* Publish Build
+
+* Build dev
+
+```node
+npm run build:dev
+
+```
+
+* Build production 
+
+```node
+npm run build:prod
+
+```
+
+* Publish 
 
 ```node
 npm run publish
