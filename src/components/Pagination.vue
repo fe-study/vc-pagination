@@ -3,15 +3,25 @@
         <ul class="pagination">
             <li v-if="!noPrevious">
                 <a style="cursor:pointer;" @click="selectPage(current - 1)" aria-label="Previous">
-                    <span aria-hidden="true">‹</span>
+                    <span aria-hidden="true">{{ prevText }}</span>
+                </a>
+            </li>
+            <li v-if="showFirstPage">
+                <a style="cursor:pointer;" @click="selectPage(1)" aria-label="firstPageText">
+                    <span aria-hidden="true">{{ firstPageText }}</span>
                 </a>
             </li>
             <li v-for="page in pages" :class="{ 'active': page.number == current, 'disabled': page.disabled }">
                 <a style="cursor:pointer;" @click="selectPage(page.number)" v-text="page.text"></a>
             </li>
+            <li v-if="showLastPage">
+                <a style="cursor:pointer;" @click="selectPage(totalPages)" aria-label="lastPageText">
+                    <span aria-hidden="true">{{ lastPageText }}</span>
+                </a>
+            </li>
             <li v-if="!noNext">
                 <a style="cursor:pointer;" @click="selectPage(current + 1)" aria-label="Next">
-                    <span aria-hidden="true">›</span>
+                    <span aria-hidden="true">{{ nextText }}</span>
                 </a>
             </li>
         </ul>
@@ -137,6 +147,22 @@ export default {
             type: String,
             default: 'center'
         },
+        prevText: {
+            type: String,
+            default: '‹'
+        },
+        nextText: {
+            type: String,
+            default: '›'
+        },
+        firstPageText: {
+            type: String,
+            default: '首页'
+        },
+        lastPageText: {
+            type: String,
+            default: '末页'
+        },
         displayNum: { // 可看见的页码数目
             type: Number,
             coerce: function (val) {
@@ -224,6 +250,12 @@ export default {
         },
         noNext: function () {
             return this.current === this.totalPages
+        },
+        showFirstPage: function () {
+            return this.edgeNum === 0
+        },
+        showLastPage: function () {
+            return this.edgeNum === 0
         },
         pages: function () {
             return getPages(this.current, this.totalPages, this.edgeNum, this.displayNum)

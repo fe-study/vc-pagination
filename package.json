@@ -1,7 +1,7 @@
 {
   "author": "indexxuan@gmail.com",
   "name": "vc-pagination",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "bootstrap pagination component in vue.js",
   "scripts": {
     "start": "webpack-dev-server --inline --hot --quiet",
@@ -9,7 +9,7 @@
     "build:prod": "webpack --progress --hide-modules --config webpack.production.js",
     "build": "npm run build:dev && npm run build:prod",
     "example": " webpack -w --progress --hide-modules --config webpack.example.js",
-    "publish": "npm build && npm publish"
+    "release": "npm run build && npm publish"
   },
   "main": "dist/build.js",
   "repository": {

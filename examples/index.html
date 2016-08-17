@@ -26,6 +26,8 @@
         <vc-pagination
             :simple="simple"
             :align="align"
+            :first-page-text="firstPageText"
+            :last-page-text="lastPageText"
             :display-num="displayNum"
             :edge-num="edgeNum"
             :total="total"
@@ -53,6 +55,16 @@
                 <input type="radio" value="center" name="align" v-model="align">居中
                 <input type="radio" value="left" name="align" v-model="align">靠左
                 <input type="radio" value="right" name="align" v-model="align">靠右
+            </div>
+
+            <div class="form-group">
+                <label>首页文案（只有当edgeNum为0的时候才显示)</label>
+                <input type="text" class="form-control" placeholder="displayNum" v-model="firstPageText" />
+            </div>
+
+            <div class="form-group">
+                <label>末页文案（只有当edgeNum为0的时候才显示)</label>
+                <input type="text" class="form-control" placeholder="displayNum" v-model="lastPageText" />
             </div>
 
             <div class="form-group">

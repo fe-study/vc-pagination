@@ -11,6 +11,8 @@ new Vue({
             },
             simple: true,
             align: 'center',
+            firstPageText: '首页',
+            lastPageText: '末页',
             displayNum: 6,
             edgeNum: 2,
             total: 200,

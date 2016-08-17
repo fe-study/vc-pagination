@@ -3,6 +3,9 @@
 ## Install
 `npm install vc-pagination --save`
 
+## Demo
+[online demo](https://iwaimai-bi-fe.github.io/vc-pagination/examples/)
+
 ## Dev
 
 * Build

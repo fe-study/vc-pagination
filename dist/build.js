@@ -368,8 +368,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-3f554902&file=Pagination.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Pagination.vue", function() {
-			var newContent = require("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-3f554902&file=Pagination.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Pagination.vue");
+		module.hot.accept("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-023c7cc3&file=Pagination.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Pagination.vue", function() {
+			var newContent = require("!!./../../../node_modules/.0.21.0@css-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/style-rewriter.js?id=_v-023c7cc3&file=Pagination.vue!./../../../node_modules/.2.2.3@less-loader/index.js!./../../../node_modules/.7.1.7@vue-loader/lib/selector.js?type=style&index=0!./Pagination.vue");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -452,7 +452,7 @@ module.exports = function() {
 /* 6 */
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"vc-pagination-component\" :class=\"align\">\n        <ul class=\"pagination\">\n            <li v-if=\"!noPrevious\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(current - 1)\" aria-label=\"Previous\">\n                    <span aria-hidden=\"true\">‹</span>\n                </a>\n            </li>\n            <li v-for=\"page in pages\" :class=\"{ 'active': page.number == current, 'disabled': page.disabled }\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(page.number)\" v-text=\"page.text\"></a>\n            </li>\n            <li v-if=\"!noNext\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(current + 1)\" aria-label=\"Next\">\n                    <span aria-hidden=\"true\">›</span>\n                </a>\n            </li>\n        </ul>\n        <form class=\"form-inline\" v-if=\"jumpable\" @submit.prevent=\"go\">\n            {{ goLabel }}到&nbsp;<input type=\"text\" class=\"form-control\" :class=\"{ 'err-pageto': errPageTo }\" v-model=\"pageTo\" />&nbsp;页\n            <button class=\"btn btn-sm btn-info\">{{ goLabel }}</button>\n        </form>\n        <form class=\"form-inline\" v-if=\"pageSizeEditable\">\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-default dropdown-toggle\" @click.stop=\"togglePageSizeDropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                    {{ pageSize }}项/页<span class=\"caret\"></span>\n                </button>\n                <ul class=\"dropdown-menu\" v-show=\"showPageSizeDropdown\" transition=\"v-page-dropdown\">\n                    <li v-for=\"pz in pageSizeArr\" @click=\"handlePageSizeChange(pz)\"><a href=\"javascript:\">{{ pz }}项/页</a></li>\n                </ul>\n            </div>\n        </form>\n    </div>";
+module.exports = "<div class=\"vc-pagination-component\" :class=\"align\">\n        <ul class=\"pagination\">\n            <li v-if=\"!noPrevious\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(current - 1)\" aria-label=\"Previous\">\n                    <span aria-hidden=\"true\">{{ prevText }}</span>\n                </a>\n            </li>\n            <li v-if=\"showFirstPage\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(1)\" aria-label=\"firstPageText\">\n                    <span aria-hidden=\"true\">{{ firstPageText }}</span>\n                </a>\n            </li>\n            <li v-for=\"page in pages\" :class=\"{ 'active': page.number == current, 'disabled': page.disabled }\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(page.number)\" v-text=\"page.text\"></a>\n            </li>\n            <li v-if=\"showLastPage\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(totalPages)\" aria-label=\"lastPageText\">\n                    <span aria-hidden=\"true\">{{ lastPageText }}</span>\n                </a>\n            </li>\n            <li v-if=\"!noNext\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(current + 1)\" aria-label=\"Next\">\n                    <span aria-hidden=\"true\">{{ nextText }}</span>\n                </a>\n            </li>\n        </ul>\n        <form class=\"form-inline\" v-if=\"jumpable\" @submit.prevent=\"go\">\n            {{ goLabel }}到&nbsp;<input type=\"text\" class=\"form-control\" :class=\"{ 'err-pageto': errPageTo }\" v-model=\"pageTo\" />&nbsp;页\n            <button class=\"btn btn-sm btn-info\">{{ goLabel }}</button>\n        </form>\n        <form class=\"form-inline\" v-if=\"pageSizeEditable\">\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-default dropdown-toggle\" @click.stop=\"togglePageSizeDropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                    {{ pageSize }}项/页<span class=\"caret\"></span>\n                </button>\n                <ul class=\"dropdown-menu\" v-show=\"showPageSizeDropdown\" transition=\"v-page-dropdown\">\n                    <li v-for=\"pz in pageSizeArr\" @click=\"handlePageSizeChange(pz)\"><a href=\"javascript:\">{{ pz }}项/页</a></li>\n                </ul>\n            </div>\n        </form>\n    </div>";
 
 /***/ },
 /* 7 */
@@ -469,15 +469,25 @@ Object.defineProperty(exports, "__esModule", {
 //         <ul class="pagination">
 //             <li v-if="!noPrevious">
 //                 <a style="cursor:pointer;" @click="selectPage(current - 1)" aria-label="Previous">
-//                     <span aria-hidden="true">‹</span>
+//                     <span aria-hidden="true">{{ prevText }}</span>
+//                 </a>
+//             </li>
+//             <li v-if="showFirstPage">
+//                 <a style="cursor:pointer;" @click="selectPage(1)" aria-label="firstPageText">
+//                     <span aria-hidden="true">{{ firstPageText }}</span>
 //                 </a>
 //             </li>
 //             <li v-for="page in pages" :class="{ 'active': page.number == current, 'disabled': page.disabled }">
 //                 <a style="cursor:pointer;" @click="selectPage(page.number)" v-text="page.text"></a>
 //             </li>
+//             <li v-if="showLastPage">
+//                 <a style="cursor:pointer;" @click="selectPage(totalPages)" aria-label="lastPageText">
+//                     <span aria-hidden="true">{{ lastPageText }}</span>
+//                 </a>
+//             </li>
 //             <li v-if="!noNext">
 //                 <a style="cursor:pointer;" @click="selectPage(current + 1)" aria-label="Next">
-//                     <span aria-hidden="true">›</span>
+//                     <span aria-hidden="true">{{ nextText }}</span>
 //                 </a>
 //             </li>
 //         </ul>
@@ -603,6 +613,22 @@ exports.default = {
             type: String,
             default: 'center'
         },
+        prevText: {
+            type: String,
+            default: '‹'
+        },
+        nextText: {
+            type: String,
+            default: '›'
+        },
+        firstPageText: {
+            type: String,
+            default: '首页'
+        },
+        lastPageText: {
+            type: String,
+            default: '末页'
+        },
         displayNum: { // 可看见的页码数目
             type: Number,
             coerce: function coerce(val) {
@@ -690,6 +716,12 @@ exports.default = {
         },
         noNext: function noNext() {
             return this.current === this.totalPages;
+        },
+        showFirstPage: function showFirstPage() {
+            return this.edgeNum === 0;
+        },
+        showLastPage: function showLastPage() {
+            return this.edgeNum === 0;
         },
         pages: function pages() {
             return getPages(this.current, this.totalPages, this.edgeNum, this.displayNum);
