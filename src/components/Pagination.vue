@@ -2,25 +2,25 @@
     <div class="vc-pagination-component" :class="align">
         <ul class="pagination">
             <li v-if="!noPrevious">
-                <a style="cursor:pointer;" @click="selectPage(current - 1)" aria-label="Previous">
+                <a style="cursor:pointer;" @click="selectPage(current - 1)" aria-label="previous">
                     <span aria-hidden="true">{{ prevText }}</span>
                 </a>
             </li>
-            <li v-if="showFirstPage">
-                <a style="cursor:pointer;" @click="selectPage(1)" aria-label="firstPageText">
+            <li v-if="showFirstPage" class="first-page">
+                <a style="cursor:pointer;" @click="selectPage(1)" aria-label="first-page">
                     <span aria-hidden="true">{{ firstPageText }}</span>
                 </a>
             </li>
             <li v-for="page in pages" :class="{ 'active': page.number == current, 'disabled': page.disabled }">
                 <a style="cursor:pointer;" @click="selectPage(page.number)" v-text="page.text"></a>
             </li>
-            <li v-if="showLastPage">
-                <a style="cursor:pointer;" @click="selectPage(totalPages)" aria-label="lastPageText">
+            <li v-if="showLastPage" class="last-page">
+                <a style="cursor:pointer;" @click="selectPage(totalPages)" aria-label="last-page">
                     <span aria-hidden="true">{{ lastPageText }}</span>
                 </a>
             </li>
             <li v-if="!noNext">
-                <a style="cursor:pointer;" @click="selectPage(current + 1)" aria-label="Next">
+                <a style="cursor:pointer;" @click="selectPage(current + 1)" aria-label="next">
                     <span aria-hidden="true">{{ nextText }}</span>
                 </a>
             </li>
@@ -62,6 +62,11 @@
             padding-bottom: 4px;
             min-width: 35px;
             text-align: center;
+        }
+        .first-page a,
+        .last-page a {
+            padding-left: 10px;
+            padding-right: 10px;
         }
     }
     .form-inline {

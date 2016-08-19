@@ -11107,7 +11107,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
 
 
       // module
-      exports.push([module.i, ".vc-pagination-component.center {\n  text-align: center;\n}\n.vc-pagination-component.left {\n  text-align: left;\n}\n.vc-pagination-component.right {\n  text-align: right;\n}\n.vc-pagination-component .pagination {\n  vertical-align: middle;\n}\n.vc-pagination-component .pagination > li > a,\n.vc-pagination-component .pagination > li > span {\n  padding: 0;\n  padding-top: 4px;\n  padding-bottom: 4px;\n  min-width: 35px;\n  text-align: center;\n}\n.vc-pagination-component .form-inline {\n  display: inline-block;\n  vertical-align: middle;\n}\n.vc-pagination-component .form-inline .form-control {\n  width: 44px;\n}\n.vc-pagination-component .err-pageto {\n  border: 1px solid #F97D7D;\n}\n.vc-pagination-component .dropdown-menu {\n  width: 100%;\n  min-width: 100%;\n  text-align: center;\n}\n.vc-pagination-component .dropdown-menu a {\n  padding: 3px;\n}\n.vc-pagination-component .v-page-dropdown-transition {\n  display: inline-block;\n}\n.vc-pagination-component .v-page-dropdown-enter {\n  -webkit-animation: fadeinT .3s;\n          animation: fadeinT .3s;\n}\n.vc-pagination-component .v-page-dropdown-leave {\n  -webkit-animation: fadeoutT .3s;\n          animation: fadeoutT .3s;\n}\n/* 淡入-从上 */\n@-webkit-keyframes fadeinT {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(-20px);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n  }\n}\n@keyframes fadeinT {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(-20px);\n            transform: translateY(-20px);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n  }\n}\n/* 淡出-向上 */\n@-webkit-keyframes fadeoutT {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-20px);\n  }\n}\n@keyframes fadeoutT {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-20px);\n            transform: translateY(-20px);\n  }\n}\n", ""]);
+      exports.push([module.i, ".vc-pagination-component.center {\n  text-align: center;\n}\n.vc-pagination-component.left {\n  text-align: left;\n}\n.vc-pagination-component.right {\n  text-align: right;\n}\n.vc-pagination-component .pagination {\n  vertical-align: middle;\n}\n.vc-pagination-component .pagination > li > a,\n.vc-pagination-component .pagination > li > span {\n  padding: 0;\n  padding-top: 4px;\n  padding-bottom: 4px;\n  min-width: 35px;\n  text-align: center;\n}\n.vc-pagination-component .pagination .first-page a,\n.vc-pagination-component .pagination .last-page a {\n  padding-left: 10px;\n  padding-right: 10px;\n}\n.vc-pagination-component .form-inline {\n  display: inline-block;\n  vertical-align: middle;\n}\n.vc-pagination-component .form-inline .form-control {\n  width: 44px;\n}\n.vc-pagination-component .err-pageto {\n  border: 1px solid #F97D7D;\n}\n.vc-pagination-component .dropdown-menu {\n  width: 100%;\n  min-width: 100%;\n  text-align: center;\n}\n.vc-pagination-component .dropdown-menu a {\n  padding: 3px;\n}\n.vc-pagination-component .v-page-dropdown-transition {\n  display: inline-block;\n}\n.vc-pagination-component .v-page-dropdown-enter {\n  -webkit-animation: fadeinT .3s;\n          animation: fadeinT .3s;\n}\n.vc-pagination-component .v-page-dropdown-leave {\n  -webkit-animation: fadeoutT .3s;\n          animation: fadeoutT .3s;\n}\n/* 淡入-从上 */\n@-webkit-keyframes fadeinT {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(-20px);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n  }\n}\n@keyframes fadeinT {\n  0% {\n    opacity: 0;\n    -webkit-transform: translateY(-20px);\n            transform: translateY(-20px);\n  }\n  100% {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n  }\n}\n/* 淡出-向上 */\n@-webkit-keyframes fadeoutT {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-20px);\n  }\n}\n@keyframes fadeoutT {\n  0% {\n    opacity: 1;\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n  }\n  100% {\n    opacity: 0;\n    -webkit-transform: translateY(-20px);\n            transform: translateY(-20px);\n  }\n}\n", ""]);
 
       // exports
 
@@ -11171,7 +11171,7 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
     /* 6 */
     /***/function (module, exports) {
 
-      module.exports = "<div class=\"vc-pagination-component\" :class=\"align\">\n        <ul class=\"pagination\">\n            <li v-if=\"!noPrevious\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(current - 1)\" aria-label=\"Previous\">\n                    <span aria-hidden=\"true\">{{ prevText }}</span>\n                </a>\n            </li>\n            <li v-if=\"showFirstPage\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(1)\" aria-label=\"firstPageText\">\n                    <span aria-hidden=\"true\">{{ firstPageText }}</span>\n                </a>\n            </li>\n            <li v-for=\"page in pages\" :class=\"{ 'active': page.number == current, 'disabled': page.disabled }\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(page.number)\" v-text=\"page.text\"></a>\n            </li>\n            <li v-if=\"showLastPage\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(totalPages)\" aria-label=\"lastPageText\">\n                    <span aria-hidden=\"true\">{{ lastPageText }}</span>\n                </a>\n            </li>\n            <li v-if=\"!noNext\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(current + 1)\" aria-label=\"Next\">\n                    <span aria-hidden=\"true\">{{ nextText }}</span>\n                </a>\n            </li>\n        </ul>\n        <form class=\"form-inline\" v-if=\"jumpable\" @submit.prevent=\"go\">\n            {{ goLabel }}到&nbsp;<input type=\"text\" class=\"form-control\" :class=\"{ 'err-pageto': errPageTo }\" v-model=\"pageTo\" />&nbsp;页\n            <button class=\"btn btn-sm btn-info\">{{ goLabel }}</button>\n        </form>\n        <form class=\"form-inline\" v-if=\"pageSizeEditable\">\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-default dropdown-toggle\" @click.stop=\"togglePageSizeDropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                    {{ pageSize }}项/页<span class=\"caret\"></span>\n                </button>\n                <ul class=\"dropdown-menu\" v-show=\"showPageSizeDropdown\" transition=\"v-page-dropdown\">\n                    <li v-for=\"pz in pageSizeArr\" @click=\"handlePageSizeChange(pz)\"><a href=\"javascript:\">{{ pz }}项/页</a></li>\n                </ul>\n            </div>\n        </form>\n    </div>";
+      module.exports = "<div class=\"vc-pagination-component\" :class=\"align\">\n        <ul class=\"pagination\">\n            <li v-if=\"!noPrevious\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(current - 1)\" aria-label=\"previous\">\n                    <span aria-hidden=\"true\">{{ prevText }}</span>\n                </a>\n            </li>\n            <li v-if=\"showFirstPage\" class=\"first-page\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(1)\" aria-label=\"first-page\">\n                    <span aria-hidden=\"true\">{{ firstPageText }}</span>\n                </a>\n            </li>\n            <li v-for=\"page in pages\" :class=\"{ 'active': page.number == current, 'disabled': page.disabled }\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(page.number)\" v-text=\"page.text\"></a>\n            </li>\n            <li v-if=\"showLastPage\" class=\"last-page\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(totalPages)\" aria-label=\"last-page\">\n                    <span aria-hidden=\"true\">{{ lastPageText }}</span>\n                </a>\n            </li>\n            <li v-if=\"!noNext\">\n                <a style=\"cursor:pointer;\" @click=\"selectPage(current + 1)\" aria-label=\"next\">\n                    <span aria-hidden=\"true\">{{ nextText }}</span>\n                </a>\n            </li>\n        </ul>\n        <form class=\"form-inline\" v-if=\"jumpable\" @submit.prevent=\"go\">\n            {{ goLabel }}到&nbsp;<input type=\"text\" class=\"form-control\" :class=\"{ 'err-pageto': errPageTo }\" v-model=\"pageTo\" />&nbsp;页\n            <button class=\"btn btn-sm btn-info\">{{ goLabel }}</button>\n        </form>\n        <form class=\"form-inline\" v-if=\"pageSizeEditable\">\n            <div class=\"btn-group\">\n                <button type=\"button\" class=\"btn btn-default dropdown-toggle\" @click.stop=\"togglePageSizeDropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                    {{ pageSize }}项/页<span class=\"caret\"></span>\n                </button>\n                <ul class=\"dropdown-menu\" v-show=\"showPageSizeDropdown\" transition=\"v-page-dropdown\">\n                    <li v-for=\"pz in pageSizeArr\" @click=\"handlePageSizeChange(pz)\"><a href=\"javascript:\">{{ pz }}项/页</a></li>\n                </ul>\n            </div>\n        </form>\n    </div>";
 
       /***/
     },
@@ -11188,25 +11188,25 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       //     <div class="vc-pagination-component" :class="align">
       //         <ul class="pagination">
       //             <li v-if="!noPrevious">
-      //                 <a style="cursor:pointer;" @click="selectPage(current - 1)" aria-label="Previous">
+      //                 <a style="cursor:pointer;" @click="selectPage(current - 1)" aria-label="previous">
       //                     <span aria-hidden="true">{{ prevText }}</span>
       //                 </a>
       //             </li>
-      //             <li v-if="showFirstPage">
-      //                 <a style="cursor:pointer;" @click="selectPage(1)" aria-label="firstPageText">
+      //             <li v-if="showFirstPage" class="first-page">
+      //                 <a style="cursor:pointer;" @click="selectPage(1)" aria-label="first-page">
       //                     <span aria-hidden="true">{{ firstPageText }}</span>
       //                 </a>
       //             </li>
       //             <li v-for="page in pages" :class="{ 'active': page.number == current, 'disabled': page.disabled }">
       //                 <a style="cursor:pointer;" @click="selectPage(page.number)" v-text="page.text"></a>
       //             </li>
-      //             <li v-if="showLastPage">
-      //                 <a style="cursor:pointer;" @click="selectPage(totalPages)" aria-label="lastPageText">
+      //             <li v-if="showLastPage" class="last-page">
+      //                 <a style="cursor:pointer;" @click="selectPage(totalPages)" aria-label="last-page">
       //                     <span aria-hidden="true">{{ lastPageText }}</span>
       //                 </a>
       //             </li>
       //             <li v-if="!noNext">
-      //                 <a style="cursor:pointer;" @click="selectPage(current + 1)" aria-label="Next">
+      //                 <a style="cursor:pointer;" @click="selectPage(current + 1)" aria-label="next">
       //                     <span aria-hidden="true">{{ nextText }}</span>
       //                 </a>
       //             </li>
@@ -11248,6 +11248,11 @@ function _interopRequireDefault2(obj) { return obj && obj.__esModule ? obj : { d
       //             padding-bottom: 4px;
       //             min-width: 35px;
       //             text-align: center;
+      //         }
+      //         .first-page a,
+      //         .last-page a {
+      //             padding-left: 10px;
+      //             padding-right: 10px;
       //         }
       //     }
       //     .form-inline {
