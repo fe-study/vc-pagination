@@ -25,6 +25,7 @@
 </head>
 <body>
     <h1 align="center">@Vue Component - vc-pagination</h1>
+    <hr>
 
     <div id="app">
         <vc-pagination
@@ -48,13 +49,13 @@
         </vc-pagination>
 
         <div class="container">
-            <div class="form-group">
+            <div class="form-group radio">
                 <div>simple - 是否是简单版本的分页(默认: false)</div>
                 <label><input type="radio" :value="bools.true" name="simple" v-model="simple"> 简单版</label>
                 <label><input type="radio" :value="bools.false" name="simple" v-model="simple"> 完整版</label>
             </div>
 
-            <div class="form-group">
+            <div class="form-group radio">
                 <div>align - 对齐</div>
                 <label><input type="radio" value="center" name="align" v-model="align">居中</label>
                 <label><input type="radio" value="left" name="align" v-model="align">居左</label>
@@ -96,7 +97,7 @@
                 <input type="text" class="form-control" placeholder="pageSize" v-model="pageSize" />
             </div>
 
-            <div class="form-group">
+            <div class="form-group radio">
                 <div>pageSizeEditable - 是否可切换pageSize(默认: true)</div>
                 <label><input type="radio" :value="bools.true" name="pageSizeEditable" v-model="pageSizeEditable">是</label>
                 <label><input type="radio" :value="bools.false" name="pageSizeEditable" v-model="pageSizeEditable">否</label>
@@ -108,7 +109,7 @@
                 <button @click="setPageSizeArr" class="btn btn-info">点击重置pageSizeArr(逗号分割的数字)</button>
             </div>
 
-            <div class="form-group">
+            <div class="form-group radio">
                 <div>jumpable - 是否可跳转(默认: true)</div>
                 <label><input type="radio" :value="bools.true" name="jumpable" v-model="jumpable">是</label>
                 <label><input type="radio" :value="bools.false" name="jumpable" v-model="jumpable">否</label>
