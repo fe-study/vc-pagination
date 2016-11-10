@@ -1,4 +1,5 @@
-import vcPagination from './components/Pagination'
+import vcPagination from './Pagination'
 
-module.exports = vcPagination
+export default vcPagination
+export { vcPagination }
 

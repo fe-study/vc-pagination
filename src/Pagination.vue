@@ -143,6 +143,7 @@
 const COMPONENT_NS = 'PAGINATION'
 
 export default {
+    name: 'vc-pagination',
     props: {
         simple: { // 普通版本
             type: Boolean,

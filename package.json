@@ -22,10 +22,11 @@
   "bugs": {
       "url": "https://github.com/iwaimai-bi-fe/vc-pagination/issues"
   },
+  "keywords": ["pagination", "component", "vue", "bootstrap"],
   "dependencies": {
+    "bootstrap": "^3.3.5",
     "vue": "^1.0.24"
   },
-  "keywords": ["pagination", "component", "vue", "bootstrap"],
   "devDependencies": {
     "babel-core": "^6.1.21",
     "babel-loader": "^6.1.0",
@@ -44,9 +45,10 @@
     "webpack-dev-server": "^1.12.0"
   },
   "files": [
-      "dist/build.js",
-      "dist/build.js.map",
-      "dist/build.min.js"
+    "src",
+    "dist/build.js",
+    "dist/build.js.map",
+    "dist/build.min.js"
   ],
   "license": "MIT"
 }

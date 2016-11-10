@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import vcPagination from '../dist/build.js'
+import vcPagination from '../src/Pagination.vue'
 
 new Vue({
 	el: '#app',

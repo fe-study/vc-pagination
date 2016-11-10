@@ -1,4 +1,4 @@
-<h1 align="center">vc-easyclearinput - @changelog</h1>
+<h1 align="center">vc-pagination - @changelog</h1>
 
 ## 0.1.3
 
